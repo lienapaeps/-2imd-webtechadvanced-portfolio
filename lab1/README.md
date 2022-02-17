@@ -1,2 +1,2 @@
 #Lab 1
-https://github.com/lienapaeps/2imd-webtechadvanced-portfolio.git 
+[Github](https://github.com/ellendeveth/2imd-webtechadvanced-lab1)
