@@ -6,4 +6,4 @@ Here is a overview of the assignments for the course Development adv: webtech fr
 
 ## Week 2 - FLEXBOX & CSS GRID
 * [Link naar The Future codepen](https://codepen.io/lienapaeps/pen/OJOwOZq?editors=1100)
-* [Link naar imd-ticket codepen](https://codepen.io/lienapaeps/pen/GROBOGw?editors=1100)
+* [Link naar IMD-ticket codepen](https://codepen.io/lienapaeps/pen/GROBOGw?editors=1100)
