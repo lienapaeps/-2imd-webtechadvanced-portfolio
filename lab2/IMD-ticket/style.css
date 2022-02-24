@@ -18,7 +18,7 @@ body {
     height: 100%;
     text-align: center;
     background-image: url("images/pexels-wendy-wei-1190298.jpg");
-    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.65);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
@@ -39,6 +39,10 @@ p {
     background-color: black;
     color: white;
     grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .header p {
     word-spacing: 5px;
@@ -52,7 +56,7 @@ p {
 
 .qr img {
     max-width: 100%;
-    width: 50%;
+    width: 45%;
 }
 
 .date {
@@ -76,4 +80,79 @@ p {
 }
 .descr {
     display: none;
+}
+
+@media (min-width: 800px) {
+
+    h1 {
+        letter-spacing: .2em;
+        font-size: 6em;
+    }
+    p {
+        font-weight: bolder;
+        font-size: 2em;
+    }
+
+    .descr p {
+        font-size: 1em;
+        text-transform: initial;
+        font-weight: normal;
+    }
+
+    .ticket {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+        grid-template-rows: 4fr 2fr 1fr;
+        padding: 2em;
+    }
+    
+    .header {
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        grid-column: 1 / 4;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .qr {
+        grid-column: 4 / 5;
+        grid-row: 1 / 4;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+    }
+
+    .qr img {
+        max-width: 100%;
+        width: 65%;
+    }
+    
+    .date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 1 / 2;
+    }
+    .admit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 2 / 3;
+    }
+    .price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 3 / 4;
+    }
+    .descr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        grid-column: 1 / 4;
+    }
 }
