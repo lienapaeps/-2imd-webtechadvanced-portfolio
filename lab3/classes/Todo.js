@@ -22,6 +22,8 @@ export default class Todo {
             li.innerHTML = this.title;
         }
 
+        li.addEventListener("click", this.markDone);
+
         return li;
       // HINT🤩
       // this method will create the HTML structure with the correct classes, based on the todo priority
@@ -32,6 +34,11 @@ export default class Todo {
     }
   
     markDone(e) {
+      if (this.classList.contains('done')) {
+        this.remove();
+      } else {
+        this.classList.add('done');
+      }
       // HINT🤩
       // this function should mark the current todo as done, by adding the correct CSS class
       // if the item is clicked, but was already marked as done, remove the item from the list

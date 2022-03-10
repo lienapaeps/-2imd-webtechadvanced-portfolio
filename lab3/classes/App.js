@@ -7,7 +7,7 @@ export default class App {
       // set up the enter Key
       this.setupEventListeners();
       // when the app loads, we can show previously saved items from localstorage
-      // this.loadFromStorage();
+      this.loadFromStorage();
     }
   
     setupEventListeners() {
@@ -23,12 +23,12 @@ export default class App {
     createItem(e) {
       let input = document.querySelector("#add-item-text").value;
 
-      if (e.key === "Enter" && input != " ") {
+      if (e.key === "Enter" && input != "") {
         console.log("📕");
         let todo = new Todo(input);
         todo.add();
         this.reset;
-        // todo.saveToStorage();
+        todo.saveToStorage();
       }
       // HINT🤩
       // this function should create a new todo by using the Todo() class
@@ -41,6 +41,8 @@ export default class App {
     }
   
     loadFromStorage() {
+
+
       // HINT🤩
       // load all items from storage here and add them to the screen
       // use the Todo class to create the elements
