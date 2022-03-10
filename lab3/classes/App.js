@@ -21,13 +21,14 @@ export default class App {
     }
   
     createItem(e) {
-      if (e.key === "Enter") {
+      let input = document.querySelector("#add-item-text").value;
+
+      if (e.key === "Enter" && input != " ") {
         console.log("📕");
-        let input = document.querySelector("#add-item-text").value;
         let todo = new Todo(input);
         todo.add();
-        todo.saveToStorage();
         this.reset;
+        // todo.saveToStorage();
       }
       // HINT🤩
       // this function should create a new todo by using the Todo() class
@@ -47,6 +48,7 @@ export default class App {
   
     reset() {
       // this function should reset the form / clear the text field
+      document.querySelector("#add-item-text").value = "";
     }
   }
   
