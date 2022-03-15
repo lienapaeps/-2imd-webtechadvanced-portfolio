@@ -5,25 +5,22 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Vite App</title>
   </head>
   <body >
-    <div id="app" class="bg-slate-800 p-4">
-      <div>
-        <h1 class="place text-white ">Loading</h1>
-        <h3 class="summary text-white capitalize"></h3>
-        <h2 class="temp text-white"></h2>
+    <div id="app">
+      <div class="weather-info">
+        <h1 class="place">Loading</h1>
+        <h3 class="summary"></h3>
+        <h2 class="temp"></h2>
+        <span class="max"></span>
+        <span class="min"></span>
       </div>
-      <div>
-        <span class="max text-white capitalize"></span>
-        <span class="min text-white capitalize"></span>
+      <div class="marvel-info">
+        <h2 class="name">Some Hero</h2>
+        <p class="copyright">Copyright:</p>
       </div>
-      <div>
-        <h2 class="name text-white">Some Hero</h2>
-        <!-- <img class="img" src="" alt="superhero image"> -->
-      </div>
-    <p class="copyright text-white">Copyright:</p>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

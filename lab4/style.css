@@ -1,10 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
-  width: 336px;
-  height: 280px;
+  width: 300px;
+  height: 600px;
+  color: #fff;
+  text-transform: capitalize;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.4em;
+  padding: .5em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+.weather-info {
+  background-color: rgba(34, 34, 34, 0.5);
+  padding: 2.5em 0;
+  align-self: baseline;
+}
+
+.marvel-info {
+  background-color: #222;
+  align-self: flex-end;
+}
+
+.copyright {
+  color: red;
 }
