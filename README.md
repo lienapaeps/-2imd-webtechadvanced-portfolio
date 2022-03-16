@@ -6,5 +6,6 @@ Here is a overview of the assignments for the course Development adv: webtech fr
 
 ## Week 2 - FLEXBOX & CSS GRID
 * [Link naar Lab 2](https://github.com/lienapaeps/2imd-webtechadvanced-portfolio/tree/main/lab2)
-* [Link naar The Future codepen](https://codepen.io/lienapaeps/pen/OJOwOZq?editors=1100)
-* [Link naar IMD-ticket codepen](https://codepen.io/lienapaeps/pen/GROBOGw?editors=1100)
+
+## Week 3 - ES6
+* [Link naar Lab 3](https://github.com/lienapaeps/2imd-webtechadvanced-portfolio/tree/main/lab3)
