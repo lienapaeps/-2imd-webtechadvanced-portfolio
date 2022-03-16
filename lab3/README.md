@@ -1,7 +1,7 @@
 # Lab 3
 
 ## IMDo App
-[Link naar IMDo App codesandbox](https://codepen.io/lienapaeps/pen/GROBOGw?editors=1100)
+[Link naar IMDo App codesandbox](https://codesandbox.io/s/vibrant-easley-db4lg3?file=/index.html)
 
 ## ES2021 feature
 ### JavaScript String replaceAll()
@@ -12,10 +12,10 @@ Syntax: `String.prototype.replaceAll(pattern, replacement)`
 
 Voorbeeld:
 
-`const my_string = 'ball bat';`
+```const my_string = 'ball bat';```
 
-`console.log(my_string.replaceAll('b', 'c'));`
+```console.log(my_string.replaceAll('b', 'c'));```
 
 Output:
 
-'call cat'
+`'call cat'`
