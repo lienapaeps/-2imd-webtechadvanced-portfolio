@@ -1,4 +1,4 @@
-## Lab 2
+# Lab 2
 
 ## The Future
 [Link naar The Future codepen](https://codepen.io/lienapaeps/pen/OJOwOZq?editors=1100)
