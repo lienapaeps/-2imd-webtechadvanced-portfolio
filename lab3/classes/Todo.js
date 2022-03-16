@@ -22,7 +22,7 @@ export default class Todo {
             li.innerHTML = this.title;
         }
 
-        li.addEventListener("click", this.markDone);
+        li.addEventListener("click", this.markDone.bind(li));
 
         return li;
       // HINT🤩
@@ -34,12 +34,26 @@ export default class Todo {
     }
   
     markDone() {
+      let array;
+
       if (this.classList.contains('done')) {
         this.remove();
-        localStorage.removeItem(this.title);
+
+        // kijken of key 'todos' leeg is
+        if (localStorage.getItem('todos') === null) {
+          array = [];
+        } else {
+          // data ophalen
+          array = JSON.parse(localStorage.getItem('todos'));
+        }
+        // index nodig om te bepalen welke todo we willen verwijderen in de todos array
+        let index = this.innerText;
+        array.splice(array.indexOf(index), 1);
+        // terug toevoegen in local storage
+        localStorage.setItem('todos', JSON.stringify(array));
+
       } else {
         this.classList.add('done');
-        this.saveToStorage();
       }
       // HINT🤩
       // this function should mark the current todo as done, by adding the correct CSS class
@@ -57,16 +71,23 @@ export default class Todo {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
-      let newData = this.title;
 
-      if(localStorage.getItem('data') == null) {
-        localStorage.setItem('data', '[]');
+      // https://www.youtube.com/watch?v=2hJ1rTANVnk&t=338s
+
+      // get data van input veld
+      let todo = this.title;
+
+      // kijken of key 'todos' leeg is, zo ja dan willen we het opvullen
+      if(localStorage.getItem('todos') == null) {
+        localStorage.setItem('todos', '[]');
       }
 
-      let oldData = JSON.parse(localStorage.getItem('data'));
-      oldData.push(newData);
+      // get old data en toevoegen aan niewe data
+      let oldData = JSON.parse(localStorage.getItem('todos'));
+      oldData.push(todo);
 
-      localStorage.setItem('data', JSON.stringify(oldData));
+      // oude en nieuwe data toevoegen in local storage
+      localStorage.setItem('todos', JSON.stringify(oldData));
 
     }
   
