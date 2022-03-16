@@ -33,11 +33,13 @@ export default class Todo {
       // return newNote;
     }
   
-    markDone(e) {
+    markDone() {
       if (this.classList.contains('done')) {
         this.remove();
+        localStorage.removeItem(this.title);
       } else {
         this.classList.add('done');
+        this.saveToStorage();
       }
       // HINT🤩
       // this function should mark the current todo as done, by adding the correct CSS class
@@ -50,11 +52,22 @@ export default class Todo {
       let todo = this.createElement(); // should return a full <li> with the right classes and innerHTML
       document.querySelector("#todo-list").appendChild(todo);
     }
-  
+
     saveToStorage() {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
+      let newData = this.title;
+
+      if(localStorage.getItem('data') == null) {
+        localStorage.setItem('data', '[]');
+      }
+
+      let oldData = JSON.parse(localStorage.getItem('data'));
+      oldData.push(newData);
+
+      localStorage.setItem('data', JSON.stringify(oldData));
+
     }
-  }
   
+  }
