@@ -16,5 +16,6 @@ Voorbeeld:
 
 `console.log(my_string.replaceAll('b', 'c'));`
 
-Output: 
+Output:
+
 'call cat'
