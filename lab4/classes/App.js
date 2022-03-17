@@ -4,7 +4,6 @@ export default class App {
         this.lng = 0;
         this.API_KEY = API_KEY;
         this.getLocation();
-        this.getHeroes();
     }
 
     // geolocatie opvragen -> mdn geolocation API
@@ -26,7 +25,6 @@ export default class App {
 
     // OpenWeather API -> Current Weather Data
     getWeather() {
-        // API key = 6045a091342bd776dd0213c064c8c027
         console.log("Getting weather");
         // API call
         let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.lat}&lon=${this.lng}&appid=${this.API_KEY}`;
@@ -53,79 +51,139 @@ export default class App {
         let maxTemp = Math.round(json.main.temp_max);
         let minTemp = Math.round(json.main.temp_min);
 
-
         document.querySelector(".summary").innerHTML = summary;
         document.querySelector(".temp").innerHTML = temp + "°";
         document.querySelector(".place").innerHTML = place;
-        document.querySelector(".max").innerHTML = "max: " + maxTemp + "°";
-        document.querySelector(".min").innerHTML = "min: " + minTemp + "°";
+        document.querySelector(".max").innerHTML = "Max: " + maxTemp + "°";
+        document.querySelector(".min").innerHTML = "Min: " + minTemp + "°";
+
+        // if warm weather show Human Torch
+        if (temp >= 20) {
+            this.getHumanTorch();
+        // if cold weather show Iceman
+        } else if (temp <= 0) {
+            this.getIceman();
+        } else {
+            // if normal weather show Spider-Man
+            this.getSpiderMan(); 
+        }
 
         // data teruggeven
-        localStorage.getItem(place, summary, temp);
+        // localStorage.getItem(place, summary, temp);
 
-        let description = [];
-        description.push(place)
-        description.push(summary)
-        description.push(temp)
-        localStorage.setItem("weather", JSON.stringify(description));
+        // let description = [];
+        // description.push(place)
+        // description.push(summary)
+        // description.push(temp)
+        // localStorage.setItem("weather", JSON.stringify(description));
 
-        description = localStorage.getItem("weather");
-        json = JSON.parse(weather);
+        // description = localStorage.getItem("weather");
+        // json = JSON.parse(weather);
 
         // tweede API
 
     }
 
     // Marvel API
-    getHeroes() {
-        // API key = 6045a091342bd776dd0213c064c8c027
-        console.log("Getting heroes");
-        // API call
-        // Spider-Man (Ultimate)
-        let url = 'https://gateway.marvel.com:443/v1/public/characters?name=Spider-Man%20(Ultimate)&apikey=f84f7431e98ce48579540c00d38f21f5';
-        // console.log(url);
+    getHumanTorch() {
+        console.log("Getting Human Torch");
 
-        // MDN fetch API
+        let url = 'https://gateway.marvel.com:443/v1/public/characters?name=Human%20Torch&apikey=f84f7431e98ce48579540c00d38f21f5';
+
         fetch(url).then( response => {
             return response.json(); // antwoord omzetten naar json
         } ).then( json => {
             // hier iets met json gaan doen
-            this.printHeroes(json);
             console.log(json);
+            this.printHumanTorch(json);
         } ).catch( error => {
             console.log(error);
         }).finally( () => {
             console.log("finally done");
         } );
     }
-
-    printHeroes(json) {
+    
+    printHumanTorch(json) {
         // let summary = json.superhero[0].description;
         let copyright = json.copyright;
         let name = json.data.results[0].name;
         let path = json.data.results[0].thumbnail.path;
         let extension = json.data.results[0].thumbnail.extension;
-
         let thumbnail = path + "." + extension;
 
         document.querySelector(".name").innerHTML = name;
-
         document.querySelector("#app").style.backgroundImage = `url('${thumbnail}')`;
         document.querySelector("#app").style.backgroundSize = "cover";
         document.querySelector("#app").style.backgroundRepeat = "no-repeat";
-
+        document.querySelector("#app").style.backgroundPosition = "center";
         document.querySelector(".copyright").innerHTML = copyright;
+    }
 
-        // data teruggeven
-        // localStorage.getItem(name);
+    getIceman() {
+        console.log("Getting Iceman");
 
-        // let description = [];
-        // description.push(name)
-        // localStorage.setItem("superhero", JSON.stringify(description));
+        let url = 'https://gateway.marvel.com:443/v1/public/characters?name=Iceman%20(Ultimate)&apikey=f84f7431e98ce48579540c00d38f21f5';
 
-        // description = localStorage.getItem("superhero");
-        // json = JSON.parse(superhero);
+        fetch(url).then( response => {
+            return response.json(); // antwoord omzetten naar json
+        } ).then( json => {
+            // hier iets met json gaan doen
+            console.log(json);
+            this.printIceMan(json);
+        } ).catch( error => {
+            console.log(error);
+        }).finally( () => {
+            console.log("finally done");
+        } );
+    }
+    
+    printIceMan(json) {
+        // let summary = json.superhero[0].description;
+        let copyright = json.copyright;
+        let name = json.data.results[0].name;
+        let path = json.data.results[0].thumbnail.path;
+        let extension = json.data.results[0].thumbnail.extension;
+        let thumbnail = path + "." + extension;
+
+        document.querySelector(".name").innerHTML = name;
+        document.querySelector("#app").style.backgroundImage = `url('${thumbnail}')`;
+        document.querySelector("#app").style.backgroundSize = "cover";
+        document.querySelector("#app").style.backgroundRepeat = "no-repeat";
+        document.querySelector("#app").style.backgroundPosition = "center";
+        document.querySelector(".copyright").innerHTML = copyright;
+    }
+
+    getSpiderMan() {
+        console.log("Getting Spider-Man");
+
+        let url = 'https://gateway.marvel.com:443/v1/public/characters?name=Spider-Man%20(Ultimate)&apikey=f84f7431e98ce48579540c00d38f21f5';
+
+        fetch(url).then( response => {
+            return response.json(); // antwoord omzetten naar json
+        } ).then( json => {
+            // hier iets met json gaan doen
+            console.log(json);
+            this.printSpiderMan(json);
+        } ).catch( error => {
+            console.log(error);
+        }).finally( () => {
+            console.log("finally done");
+        } );
+    }
+    
+    printSpiderMan(json) {
+        // let summary = json.superhero[0].description;
+        let copyright = json.copyright;
+        let name = json.data.results[0].name;
+        let path = json.data.results[0].thumbnail.path;
+        let extension = json.data.results[0].thumbnail.extension;
+        let thumbnail = path + "." + extension;
+
+        document.querySelector(".name").innerHTML = name;
+        document.querySelector("#app").style.backgroundImage = `url('${thumbnail}')`;
+        document.querySelector("#app").style.backgroundSize = "cover";
+        document.querySelector("#app").style.backgroundRepeat = "no-repeat";
+        document.querySelector("#app").style.backgroundPosition = "center";
+        document.querySelector(".copyright").innerHTML = copyright;
     }
 }
-
-// 6e1cac7a40779b5ce2a25191e7eaf33d94677c26
