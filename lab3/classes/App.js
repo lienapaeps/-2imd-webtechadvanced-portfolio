@@ -27,9 +27,9 @@ export default class App {
         let txt = document.querySelector("#add-item-text");
         if (txt.value !== '' && txt.value !== ' ') {
           let todo = new Todo(txt.value);
-          this.reset(txt);
           todo.add();
           todo.saveToStorage();
+          this.reset(txt);
         }
       }
       // HINT🤩
@@ -48,13 +48,27 @@ export default class App {
       // use the Todo class to create the elements
 
       // kijken of key 'todos' niet leeg is, zo ja dan zit er iets in en willen we de data ophalen en tonen
-      if(localStorage.getItem('todos') != null) {
-        let todos = JSON.parse(localStorage.getItem('todos'));
-        for (let i = 0; i < todos.length; i++) {
-          let todo = new Todo(todos[i]);
-          todo.add();
-        }
-      }
+      // if(localStorage.getItem('todos') != null) {
+      //   let todos = JSON.parse(localStorage.getItem('todos'));
+      //   for (let i = 0; i < todos.length; i++) {
+      //     let todo = new Todo(todos[i], false);
+      //     todo.add();
+      //   }
+      // }
+
+      let todos = JSON.parse(localStorage.getItem('todos'));  
+      if(todos !== null) {
+        //console.log("hello");
+      todos.forEach((title) => {
+          let todo = new Todo(`${title['priority']}:${title['title']}`);
+          if(title['status'] === "done"){
+            todo.add("done");
+          }
+          else {
+            todo.add();
+          }              
+      });
+    }
     }
   
     reset(input) {
