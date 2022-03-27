@@ -5,10 +5,9 @@ export default class App {
         this.API_KEY = API_KEY;
         this.getLocation();
     }
-
     // geolocatie opvragen -> mdn geolocation API
     getLocation() {
-        console.log("Getting location");
+        // console.log("Getting location");
         navigator.geolocation.getCurrentPosition(this.locationSucces.bind(this), this.locationError.bind(this)); // navigator is de browser
     }
     // opvragen gelukt
@@ -25,7 +24,7 @@ export default class App {
 
     // OpenWeather API -> Current Weather Data
     getWeather() {
-        console.log("Getting weather");
+        // console.log("Getting weather");
         // API call
         let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.lat}&lon=${this.lng}&appid=${this.API_KEY}`;
         console.log(url);
@@ -36,7 +35,7 @@ export default class App {
         } ).then( json => {
             // hier iets met json gaan doen
             this.printWeather(json);
-            console.log(json);
+            // console.log(json);
         } ).catch( error => {
             console.log(error);
         }).finally( () => {
@@ -67,26 +66,11 @@ export default class App {
             // if normal weather show Spider-Man
             this.getSpiderMan(); 
         }
-
-        // data teruggeven
-        // localStorage.getItem(place, summary, temp);
-
-        // let description = [];
-        // description.push(place)
-        // description.push(summary)
-        // description.push(temp)
-        // localStorage.setItem("weather", JSON.stringify(description));
-
-        // description = localStorage.getItem("weather");
-        // json = JSON.parse(weather);
-
-        // tweede API
-
     }
 
     // Marvel API
     getHumanTorch() {
-        console.log("Getting Human Torch");
+        // console.log("Getting Human Torch");
 
         let url = 'https://gateway.marvel.com:443/v1/public/characters?name=Human%20Torch&apikey=f84f7431e98ce48579540c00d38f21f5';
 
@@ -94,7 +78,7 @@ export default class App {
             return response.json(); // antwoord omzetten naar json
         } ).then( json => {
             // hier iets met json gaan doen
-            console.log(json);
+            // console.log(json);
             this.printHumanTorch(json);
         } ).catch( error => {
             console.log(error);
@@ -120,7 +104,7 @@ export default class App {
     }
 
     getIceman() {
-        console.log("Getting Iceman");
+        // console.log("Getting Iceman");
 
         let url = 'https://gateway.marvel.com:443/v1/public/characters?name=Iceman%20(Ultimate)&apikey=f84f7431e98ce48579540c00d38f21f5';
 
@@ -128,7 +112,7 @@ export default class App {
             return response.json(); // antwoord omzetten naar json
         } ).then( json => {
             // hier iets met json gaan doen
-            console.log(json);
+            // console.log(json);
             this.printIceMan(json);
         } ).catch( error => {
             console.log(error);
@@ -154,7 +138,7 @@ export default class App {
     }
 
     getSpiderMan() {
-        console.log("Getting Spider-Man");
+        // console.log("Getting Spider-Man");
 
         let url = 'https://gateway.marvel.com:443/v1/public/characters?name=Spider-Man%20(Ultimate)&apikey=f84f7431e98ce48579540c00d38f21f5';
 
@@ -162,7 +146,7 @@ export default class App {
             return response.json(); // antwoord omzetten naar json
         } ).then( json => {
             // hier iets met json gaan doen
-            console.log(json);
+            // console.log(json);
             this.printSpiderMan(json);
         } ).catch( error => {
             console.log(error);
