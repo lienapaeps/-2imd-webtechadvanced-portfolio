@@ -8,4 +8,4 @@ In de codesandbox werkt de link naar mijn gekozen API niet. (Marvel API) Ik denk
 ![Screen capture of Marvel website](https://github.com/lienapaeps/2imd-webtechadvanced-portfolio/blob/main/lab4/images/Schermafbeelding%202022-03-27%20172213.jpg)
 
 Hier een screenshot van hoe de advertentie er uit ziet.
-![Screen capture of ad](https://github.com/lienapaeps/2imd-webtechadvanced-portfolio/blob/main/lab4/images/Schermafbeelding%2022-03-27%172751.jpg)
+![Screen capture of ad](https://github.com/lienapaeps/2imd-webtechadvanced-portfolio/blob/main/lab4/images/Schermafbeelding%202022-03-27%20172751.jpg)
