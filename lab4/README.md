@@ -3,10 +3,7 @@
 ## Weather Based Ad
 [Codesandbox](https://codesandbox.io/s/weatherapp-jxkbhr)
 
-In de codesandbox werkt de connectie naar mijn gekozen API niet. (Marvel API) Ik denk dat dit te maken zal hebben met toestemming. Om via localhost te werken moest ik dit domein ook toevoegen via de website. Ik heb dit ook geprobeerd voor codesanbox maar dit lijkt niet te werken. Zie screenshot.
-
-![Screen capture of Marvel website](https://github.com/lienapaeps/2imd-webtechadvanced-portfolio/blob/main/lab4/images/Schermafbeelding%202022-03-27%20172213.jpg)
-
-Hier een screenshot van hoe de advertentie er uit ziet.
-
-![Screen capture of ad](https://github.com/lienapaeps/2imd-webtechadvanced-portfolio/blob/main/lab4/images/Schermafbeelding%202022-03-27%20172751.jpg)
+Ik heb gewerkt met de Marvel API. De advertentie geeft volgende superhelden weer op basis van de temperatuur:
+* Human Torch wordt getoond bij 20 graden of meer
+* Iceman wordt getoond bij 0 graden of minder
+* Spider-Man wordt getoond bij 'normaal' weer (tussen de 1 en 19 graden)
